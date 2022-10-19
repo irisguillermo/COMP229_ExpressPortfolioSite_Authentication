@@ -5,6 +5,6 @@ import { showBusinessList, showBusinessUpdatePage } from "../controllers/busines
 const router = Router();
 
 router.get('/business-list', showBusinessList);
-router.get('/business-updates', showBusinessUpdatePage);
+router.get('/business-updates/:id', showBusinessUpdatePage);
 
 export default router;

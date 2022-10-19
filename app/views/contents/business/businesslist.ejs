@@ -1,9 +1,9 @@
 <div class="container">
     <h1>Business Contact List</h1>
-    <a href="/business-add" class="btn btn-primary" role="button">
+    <!--<a href="/business-updates" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Update a business contact</a>
     <div class="row">
-        <div class="col">
+        <div class="col"-->
     
             <table class="table table-striped table-bordered table-hover">
                 <thead class="table-dark">
@@ -15,7 +15,6 @@
                     </tr>
                 </thead>
                 <tbody id="businessList">
-                    <!-- Repeatable Rows -->
                     <% for(let count = 0; count < business.length; count++) { %>
                         <tr>
                             <th scope="row" class="text-center"><%= count + 1 %></th>
@@ -24,15 +23,15 @@
                             <td><%= business[count].emailAddress %></td>
                             
                             <td class="text-center col-1">
-                                <a href="/business-update/<%= business[count]._id %>"
+                                <a href="/business-updates/<%= business[count]._id %>"
                                     class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i> Update</a>
+                                    <i class="fas fa-pencil-alt"></i>Update</a>
                             </td>
                             
                             <td class="text-center col-1">
                                 <a href="/business-delete/<%= business[count]._id %>"
                                     class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                                    <i class="fas fa-trash-alt"></i>Delete</a>
                             </td>
                         </tr>
                     <% } %>
