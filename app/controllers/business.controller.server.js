@@ -13,3 +13,7 @@ export function showBusinessList (req, res, next){
 export function showBusinessUpdatePage(req, res, next ){
     res.render('index', {title: 'Update Business Info', page:'business/updates', business: {} });
 }
+
+export function displayBusinessUpdatePage(req, res, next){
+    res.render('index',{title: 'Update Business Info', page:'business/updates', business: {} })
+}
