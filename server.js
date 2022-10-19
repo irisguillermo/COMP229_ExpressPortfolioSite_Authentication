@@ -7,11 +7,19 @@ import path, {dirname} from 'path';
 import {fileURLToPath} from 'url';
 const __dirname = dirname (fileURLToPath(import.meta.url))
 
-import { Secret } from './config/config.js';
+import mongoose from 'mongoose';
+
+import {mongoDB, Secret } from './config/config.js';
 
 import router from './app/routes/index.route.server.js'
 
 const app = express();
+
+mongoose.connect(mongoDB);
+const db = mongoose.connection;
+
+db.on('open', () => console.log("MongoDB connection successful"));
+db.on('error', ()=> console.log("MongoDB connection error"));
 
 
 
