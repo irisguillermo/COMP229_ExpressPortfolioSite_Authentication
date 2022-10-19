@@ -1,3 +1,4 @@
+import { render } from "ejs";
 import businessModel from "../models/businessview.js";
 
 export function showBusinessList (req, res, next){
@@ -16,4 +17,20 @@ export function showBusinessUpdatePage(req, res, next ){
 
 export function displayBusinessUpdatePage(req, res, next){
     res.render('index',{title: 'Update Business Info', page:'business/updates', business: {} })
+}
+
+export function displayBusinessLoginPage(req, res, next){
+    res.render('index',{title: 'Update Business Info', page:'business/login', business: {} })
+}
+
+export function displayBusinessEditPage(req, res, next){
+    let id = req.params.id;
+
+    businessModel.findById(id, (err, business)=> {
+        if(err){
+            console.error(err);
+            render.end(err);
+        }
+        res.render('index',{title: 'Update Business Info', page:'business/updates', business: business });
+    })
 }
