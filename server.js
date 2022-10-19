@@ -12,6 +12,7 @@ import mongoose from 'mongoose';
 import {mongoDB, Secret } from './config/config.js';
 
 import router from './app/routes/index.route.server.js'
+import businessRouter from './app/routes/business.route.server.js';
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use(session({
 
 
 app.use('/', router);
+app.use('/', businessRouter);
 
 app.listen(3000);
 
