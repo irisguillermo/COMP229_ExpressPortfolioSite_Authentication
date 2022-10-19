@@ -7,6 +7,12 @@ import path, {dirname} from 'path';
 import {fileURLToPath} from 'url';
 const __dirname = dirname (fileURLToPath(import.meta.url))
 
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import flash from 'connect-flash';
+
+let localStrategy = passportLocal.Strategy;
+
 import mongoose from 'mongoose';
 
 import {mongoDB, Secret } from './config/config.js';

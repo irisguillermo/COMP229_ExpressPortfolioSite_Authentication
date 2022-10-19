@@ -34,3 +34,6 @@ export function displayBusinessEditPage(req, res, next){
         res.render('index',{title: 'Update Business Info', page:'business/updates', business: business });
     })
 }
+
+
+
