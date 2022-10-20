@@ -13,6 +13,8 @@ import flash from 'connect-flash';
 
 let localStrategy = passportLocal.Strategy;
 
+import user from './app/models/user.js';
+
 import mongoose from 'mongoose';
 
 import {mongoDB, Secret } from './config/config.js';

@@ -3,7 +3,7 @@ import passportLocalMongoose from 'passport-local-mongoose';
 const {PassportLocalSchema } = mongoose;
 const Schema = mongoose.Schema;
 
-const LoginSchema = new Schema({
+const UserSchema = new Schema({
     showName: String,
     username: String,
     emailAddress: String
@@ -11,6 +11,6 @@ const LoginSchema = new Schema({
     collection: 'users'
 });
 
-LoginSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
-export default mongoose.model('Login', LoginSchema);
+export default mongoose.model('Login', UserSchema);

@@ -16,9 +16,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="publishedTextField">Contact Number</label>
+                    <label for="contactTextField">Contact Number</label>
                     <input type="text" class="form-control"
-                    id="publishedTextField"
+                    id="contactTextField"
                     placeholder="Enter contact number"
                     name="contactNumber" 
                     value="<%= business.contactNumber %>"
@@ -26,16 +26,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="priceTextField">Business Email</label>
-                    <input type="number" class="form-control"
-                    id="priceTextField"
+                    <label for="emailTextField">Business Email</label>
+                    <input type="email" class="form-control"
+                    id="emailTextField"
                     placeholder="Enter business email"
                     name="emailAddress" 
                     value="<%= business.emailAddress %>"
                     required>
                 </div>
 
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-primary" type="edits">
                     <i class="fas fa-marker"></i>Update</button>
 
                     <a href="/business-list" class="btn btn-warning">
