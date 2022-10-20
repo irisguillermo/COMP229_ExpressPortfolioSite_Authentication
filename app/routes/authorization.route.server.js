@@ -1,6 +1,10 @@
 import { Router } from "express";
+import { DisplayLoginPage, ProcessLoginPage } from "../controllers/authorization.controller.server.js";
 
 const router = Router();
 
-router.get('/login', DisplayLoginPage);
+router.get('/business-login', DisplayLoginPage);
+router.post('/business-login', ProcessLoginPage);
 
+
+export default router;
