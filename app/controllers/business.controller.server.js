@@ -63,30 +63,15 @@ export function processBusinessEditPage(req, res, next){
     })
 }
 
+export function ProcessBusinessDelete(req, res, next){
+    let id = req.params.id;
 
-//export function showBusinessUpdatePage(req, res, next ){
- //   res.render('index', {title: 'Update Business Info', page:'business/updates', business: {} });
-//}
-
-//export function displayBusinessUpdatePage(req, res, next){
-   // res.render('index',{title: 'Update Business Info', page:'business/updates', business: {} })
-//}
-
-//export function displayBusinessLoginPage(req, res, next){
-   // res.render('index',{title: 'Update Business Info', page:'business/login', business: {} })
-//}
-
-//export function displayBusinessEditPage(req, res, next){
-   // let id = req.params.id;
-
-    //businessModel.findById(id, (err, business)=> {
-       // if(err){
-          //  console.error(err);
-          //  render.end(err);
-       // }
-        ///res.render('index',{title: 'Update Business Info', page:'business/updates', business: business });
-    //})
-//}
-
-
+    businessModel.remove({_id: id}, (err) => {
+        if (err){
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/business-list');
+    })
+}
 
