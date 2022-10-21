@@ -21,7 +21,7 @@ import {mongoDB, Secret } from './config/config.js';
 
 import router from './app/routes/index.route.server.js'
 import businessRouter from './app/routes/business.route.server.js';
-import authorizationRouter from './app/routes/authorization.route.server.js';
+import authorRouter from './app/routes/author.route.server.js';
 
 const app = express();
 
@@ -62,7 +62,8 @@ passport.deserializeUser(user.deserializeUser());
 
 app.use('/', router);
 app.use('/', businessRouter);
-app.use('/', authorizationRouter);
+app.use('/', authorRouter);
+
 
 app.listen(3000);
 
