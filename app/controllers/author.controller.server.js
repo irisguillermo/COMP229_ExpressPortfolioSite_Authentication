@@ -2,7 +2,7 @@ import express from "express";
 
 import passport from "passport";
 
-import user from '../models/user.js';
+import user from "../models/user.js";
 
 import {UserDisplayName} from '../utils/index.js';
 
@@ -20,7 +20,7 @@ export function processLoginPage(req, res, next){
             res.end(err);
         }
         if(!user){
-            req.flash('loginMessage', "Authentication Error")
+            req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
         }
 
@@ -32,5 +32,5 @@ export function processLoginPage(req, res, next){
             return res.redirect('/business-list');
         })
 
-    })(req, res, next)
+    })(req, res, next);
 }

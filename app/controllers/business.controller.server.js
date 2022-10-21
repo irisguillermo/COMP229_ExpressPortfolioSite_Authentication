@@ -1,6 +1,6 @@
-import { render } from "ejs";
 import business from "../models/business.js";
 import businessModel from "../models/business.js";
+
 
 export function showBusinessList (req, res, next){
     businessModel.find(function(err, businessCollection){
@@ -12,10 +12,10 @@ export function showBusinessList (req, res, next){
     })
 }
 
-
 export function showBusinessAddPage(req, res, next){
     res.render('index', {title: "Add Business", page: 'business/edits', business: {}});
 }
+
 
 export function processBusinessAddPage(req, res, next){
     let newBusiness = businessModel({
@@ -32,7 +32,7 @@ export function processBusinessAddPage(req, res, next){
     })
 }
 
-export function showBusinessEditPage(req, res, next){
+export function showBusinessUpdatePage(req, res, next){
     let id = req.params.id;
 
     businessModel.findById(id, (err, business) => {
@@ -40,11 +40,11 @@ export function showBusinessEditPage(req, res, next){
             console.error(err);
             res.end(err);
         }
-        res.render('index', {title: 'Edit Business', page: 'business/edits', business: business});
+        res.render('index', {title: 'Update Business', page: 'business/updatepage', business: business});
     })
 }
 
-export function processBusinessEditPage(req, res, next){
+export function processBusinessUpdatePage(req, res, next){
     let id = req.params.id;
 
     let newBusiness = businessModel({
