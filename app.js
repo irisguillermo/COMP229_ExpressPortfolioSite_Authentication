@@ -54,9 +54,9 @@ app.use(flash());
 //11
 app.use(passport.initialize());
 app.use(passport.session());
-
+//12
 passport.use(user.createStrategy());
-
+//13
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
